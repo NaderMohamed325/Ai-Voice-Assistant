@@ -18,6 +18,7 @@ import numpy
 import pandas
 import matplotlib
 from define import *
+from actions import *
 """######################## Library Files End ######################"""
 
 
@@ -25,8 +26,14 @@ from define import *
 
 """##################### Function Define End #######################"""
 
-
-
+# speak("Hello my Friend,I am sika")
+# welcome()
+# userOrder = listen()
+# if "الساعه" in userOrder : 
+#     time_now()
+# elif "اليوم" or "التاريخ" in userOrder : 
+#     date_now() 
+    
 
 """
 *****************************************************************************************************************
