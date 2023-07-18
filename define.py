@@ -6,7 +6,7 @@
 #####################################################################"""
 
 """####################### Library Files Start ######################"""
-import pyttsx3
+import pyttsx3 # take a text and convert it to voice
 import speech_recognition as spRe
 import datetime
 import wikipedia
@@ -22,7 +22,7 @@ import matplotlib
 """###################### Global variable start ####################"""
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[0].id)
 
 
 """####################### Global variable end #####################"""
@@ -39,19 +39,38 @@ def welcome():
     hour=int(datetime.datetime.now().hour)
    
     if hour>=0 and hour<12:
-        speak("Good Morning,My Brother")
-        print("Good Morning,My Brother")
+        speak("Good Morning , My Brother")
+        print("Good Morning , My Brother")
     elif hour>=12 and hour<18:
-        speak("Good Afternoon,My Brother")
-        print("Good Afternoon,My Brother")
+        speak("Good Afternoon , My Brother")
+        print("Good Afternoon , My Brother")
     else:
-        speak("A Hot Night is Here,My Brother")
-        print("A Hot Night is Here,My Brother")
-    speak("I am Here,How Can I help you?")
-    print("I am Here,How Can I help you?") 
+        speak("A Hot Night is Here , My Brother")
+        print("A Hot Night is Here , My Brother")
+    speak("I am Here , How Can I help you?")
+    print("I am Here , How Can I help you?") 
 
 
-def listen():  #It takes microphone input from the user and returns string output
+def listenAr():  #It takes microphone input from the user and returns string output
+
+    r = spRe.Recognizer()
+    with spRe.Microphone() as source:
+        print("Listening...")
+        r.pause_threshold = 1
+        audio = r.listen(source)
+
+    try:
+        print("Recognizing...")    
+        query = r.recognize_google(audio, language='ar-AR')
+        print(f"User said: {query}\n")
+
+    except Exception as e:
+        # print(e)    
+        print("Say that again please...")  
+        listenAr()
+    return query
+
+def listenEn():  #It takes microphone input from the user and returns string output
 
     r = spRe.Recognizer()
     with spRe.Microphone() as source:
@@ -67,7 +86,7 @@ def listen():  #It takes microphone input from the user and returns string outpu
     except Exception as e:
         # print(e)    
         print("Say that again please...")  
-        return "None"
+        listenEn()
     return query
 """##################### Function Define End #######################"""
 
@@ -90,7 +109,5 @@ Ahmed Basem                  18/7/23                             def fun listen
 
 
 """
-
-
-
-listen()
+mytext = listenAr()
+print(mytext)
