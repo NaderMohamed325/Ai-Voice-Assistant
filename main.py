@@ -9,7 +9,6 @@
 import pyttsx3
 import speech_recognition as sr
 import datetime
-import wikipedia
 import webbrowser
 import os
 import smtplib
@@ -26,14 +25,52 @@ from actions import *
 
 """##################### Function Define End #######################"""
 
-# speak("Hello my Friend,I am sika")
+# speak("Hello my Friend,I am Basem")
 # welcome()
-# userOrder = listen()
-# if "الساعه" in userOrder : 
-#     time_now()
-# elif "اليوم" or "التاريخ" in userOrder : 
-#     date_now() 
-    
+
+UserOrder = listenEn()
+UserOrder = UserOrder.lower()
+
+if "youtube" in UserOrder :
+    youtube()
+elif "google" in UserOrder :
+    google()    
+elif "facebook" in UserOrder :
+    facebook()
+elif "discord" in UserOrder :
+    discord()
+elif "code" in UserOrder :
+    vs_code()
+elif "time" in UserOrder :
+    time_now()
+elif "date" in UserOrder :
+    date_now()
+elif "ece drive" in UserOrder :
+    ece_drive()
+elif "ece channel" in UserOrder :
+    ece_channel()
+elif "developers" in UserOrder :
+    developers()
+elif "linkedin" in UserOrder :
+    linkedin()
+elif "wikipedia" in UserOrder :
+    wikipedia()
+elif "joke" in UserOrder :
+    joke()
+elif ("gbt" or "chat") in UserOrder :
+    chatGpt()
+elif ("whatsapp" or 'whats') in UserOrder :
+    whatsapp()
+elif "music" in UserOrder :
+    playMusic()
+elif ("temperature" or "weather") in UserOrder :
+    weather()
+else : 
+    speak("sorry about that , but this feature is not here now")
+    print("sorry about that , but this feature is not here now")
+
+
+
 
 """
 *****************************************************************************************************************
