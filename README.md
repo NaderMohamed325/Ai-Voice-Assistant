@@ -9,6 +9,6 @@ library used : pyttsx3 --> https://pypi.org/project/pyttsx3/
                openai --> https://platform.openai.com/docs/api-reference?lang=python
                wikipedia --> https://pypi.org/project/wikipedia/
 
-from pyttsx3 library implement the function speak that take voice from user and convert it to text\n
+from pyttsx3 library implement the function speak that take voice from user and convert it to text
 from speech_recognition library implement the function listenEn & listenAr that take text and convert it to voice
 from openai library and using api of chat gpt we implement function chat gpt that take question from user and ask chat gpt about answer
