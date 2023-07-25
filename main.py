@@ -1,4 +1,4 @@
-from define import listen,speak,welcome,progLang
+from define import listen,speak,welcome,progLang,chat_with_gpt
 from actions import *
 ##################################################
 welcome()
@@ -104,14 +104,19 @@ while True :
         elif "فيديو" in UserOrder :
             video_take()
             break
-        elif"ملاحظه" in UserOrder :
+        elif "ملاحظه" in UserOrder :
             notes()
             break
-        elif"تسجيل ملاحظه" in UserOrder :
+        elif "تسجيل ملاحظه" in UserOrder :
             notes()
+            break
+        elif "ارسال بريد" :
+            emails()
             break
         else : 
-            speak("انا على اخري و الكلام ده مش عندي ف حل عن نفوخي و شوفلك حاجة تانية")
+            result = chat_with_gpt(UserOrder)
+            speak(result)
+            break
     else :
         if "bye" in UserOrder :
             break
@@ -148,6 +153,9 @@ while True :
             developers()
         elif "linkedin" in UserOrder :
             linkedin()
+            break
+        elif "send email" :
+            emails()
             break
         elif "translation" :
             translation()
@@ -206,8 +214,9 @@ while True :
             notes()
             break
         else : 
-            speakEn("sorry about that , but this feature is not here now")
-            print(" sorry about that , but this feature is not here now ".center(110, "="))
+            result = chat_with_gpt(UserOrder)
+            speak(result)
+            break
     speakEn("Any Thing Other")
     UserOrder = listen()
     UserOrder = UserOrder.lower()
