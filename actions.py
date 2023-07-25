@@ -18,7 +18,7 @@ import random
 import gtts
 from tempfile import NamedTemporaryFile
 import pygame
-from define import speak,listen,coun,chat_with_gpt,speakEn,listenEn
+from define import speak,listen,coun,chat_with_gpt,speakEn,listenEn,send_email
 import psutil
 from deep_translator import GoogleTranslator
 """######################## Library Files End ######################"""
@@ -225,17 +225,7 @@ def chatGpt():
         response = chat_with_gpt(user_input)
         speak(response)
         print(f" Bot: {response} ".center(110, "="))
-        user_input = listen()
-
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-     
-    # Enable low security in gmail
-    server.login('your email id', 'your email password')
-    server.sendmail('your email id', to, content)
-    server.close()     
+        user_input = listen() 
 
 def playMusic() :
     songs_dir=r"C:\\Users\\ahmed\\Downloads\\Music"
@@ -339,4 +329,16 @@ def translation():
             translated = GoogleTranslator(source='auto', target='ar').translate(to_translate)
             speak(translated)
             print(translated)
+
+def emails():
+    email_sender = 'ahmedbasem12004@gmail.com'
+    speakEn("Enter The Email You Want TO send the Email")
+    email_receiver = input("Enter The Email Please : ")
+    email_password = "heuxxxajgpgoalds"
+    speakEn("Say What is the Subject of Mail")
+    print(" Say What is the Subject of Mail ".center("=",110))
+    subject = listenEn()
+    print(" Say What is the Body of Mail ".center("=",110))
+    body = listenEn()
+    send_email(subject, body, email_sender, email_receiver, email_password)
 """##################### Function Define End #######################"""
