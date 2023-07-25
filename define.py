@@ -24,6 +24,8 @@ import gtts
 from tempfile import NamedTemporaryFile
 import pygame
 import pprint
+import smtplib
+from email.mime.text import MIMEText
 """######################## Library Files End ######################"""
 def change_voice(engine, language, gender='VoiceGenderFemale'):
     for voice in engine.getProperty('voices'):
@@ -174,4 +176,14 @@ def coun():
             count += 1
 
     return count-1
+def send_email(subject, body, sender, recipients, password):
+    msg = MIMEText(body)
+    msg['Subject'] = subject
+    msg['From'] = sender
+    msg['To'] = ', '.join(recipients)
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
+       smtp_server.login(sender, password)
+       smtp_server.sendmail(sender, recipients, msg.as_string())
+    speakEn("Message sent!")
+    print("Message sent!".center("=",110))
 """##################### Function Define End #######################"""
