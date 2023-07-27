@@ -335,17 +335,15 @@ def translation():
             print(translated)
 
 def emails():
-    email_sender = 'ahmedBot12004@gmail.com'
+    email_sender = 'ahmedbasem12004@gmail.com'
     speakEn("Enter The Email You Want TO send the Email")
     input_box.delete(0, tk.END)
-    email_receiver = input_box.insert(0, input())  
-        
-    
+    input_box.focus_set()
+    email_receiver = input()
     email_password = "heuxxxajgpgoalds"
     speakEn("Say What is the Subject of Mail")
-    print(" Say What is the Subject of Mail ".center("=",110))
-    subject = listenEn()
-    print(" Say What is the Body of Mail ".center("=",110))
-    body = listenEn()
+    subject = str(listenEn())
+    speakEn("Say What is the Body of Mail")
+    body = str(listenEn())
     send_email(subject, body, email_sender, email_receiver, email_password)
 """##################### Function Define End #######################"""
