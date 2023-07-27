@@ -24,48 +24,58 @@ from deep_translator import GoogleTranslator # Translates
 """######################## Library Files End ######################"""
 
 """##################### Function Define Start #####################"""
-def google():
+def google():#used to open google and search about specific topic
     speakEn("Google Opened")
     print(" Google Opened ".center(110, "="))
+    '''
+    string.center(width, fillchar)
+
+Here's what each parameter means:
+
+string: The original string that you want to center within a specified width.
+width: The total width of the resulting centered string, including the original string and the fill characters.
+fillchar (optional): The character to be used for filling the empty space on either side of the original string. If not provided, the default fill character is a space.
+'''
     speakEn("What you need from Google")
     print(" What you need from Google ".center(110, "="))
     googleSearch = listen()
     googleSearch = googleSearch.replace(" ","+")
     speakEn("Operation is Done")
-    print(" Operation is Done ".center(110, "="))
-    url = "google.com/search?q="
-    url = url + googleSearch
-    webbrowser.open_new_tab(url)
+    print(" Operation is Done ".center(110, "=")) #formating print statment
+    url = "google.com/search?q="    
+    url = url + googleSearch 
+    webbrowser.open_new_tab(url)#go the the link (url:Uniform Resource Locators)
 
-def youtube():
+def youtube():#open the youtube using voice
     speakEn("Youtube Opened")
     print(" Youtube Opened ".center(110, "="))
     speakEn("What you need from Youtube")
     print(" What you need from Youtube ".center(110, "="))
     youtubeSearch = listen()
-    youtubeSearch = youtubeSearch.replace(" ","+")
+    youtubeSearch = youtubeSearch.replace(" ","+") #this is made due to youtube searching function
     speakEn("Operation is Done")
     print(" Operation is Done ".center(110, "="))
     url = "youtube.com/search?q="
     url = url + youtubeSearch
     webbrowser.open_new_tab(url)
 
-def facebook():
+def facebook(): #open the facebook only
     speakEn("You seem to be a fan of Mark Zuckerberg, however, Facebook is open")
     print(" You seem to be a fan of Mark Zuckerberg, however, Facebook is open ".center(110, "="))
     url = "www.facebook.com"
     webbrowser.open_new(url)
 
-def vs_code():
+def vs_code(): #if you want to edit this code ,all you need to call me XD
     speakEn("Vs code ? hmmmm , You look like a Programmer")
     print(" Vs code ? hmmmm , You look like a Programmer ".center(110, "="))
     speakEn("Vs code is open")
     print(" Vs code is open ".center(110, "="))
     codePath = r"C:\Users\ahmed\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-    os.startfile(codePath)
+    #r is used to ignore double slashes if the 'r' is gone double them ,its a format method
+    os.startfile(codePath) #open the file using his path
 
 def time_now():
-    strTime = datetime.datetime.now().strftime("%H:%M:%S")    
+    strTime = datetime.datetime.now().strftime("%H:%M:%S") #used to format the time to string    
     speakEn(f"Sir, the time is {strTime}")
     print(f" Sir, the time is {strTime} ".center(110, "="))
 
