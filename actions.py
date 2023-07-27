@@ -1,13 +1,13 @@
 """####################### Library Files Start ######################"""
 import pyttsx3 # take a text and convert it to voice
-import ecapture as ec
-import pyautogui
-import speech_recognition as spRe
-import datetime
-import webbrowser
-import os
-import smtplib
-import math
+import ecapture as ec # a tool used to take plaintext
+import pyautogui #a Python module that enables interaction with a GUI operating system
+import speech_recognition as spRe #used in recognition of the voices
+import datetime # used to know time and date
+import webbrowser # open default browser
+import os #reach os files and operate them
+import smtplib #client session object that can be used to send mail to any Internet machine
+import math # do math 
 import numpy
 import pandas
 import matplotlib
