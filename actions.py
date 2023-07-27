@@ -35,6 +35,10 @@ Here's what each parameter means:
 string: The original string that you want to center within a specified width.
 width: The total width of the resulting centered string, including the original string and the fill characters.
 fillchar (optional): The character to be used for filling the empty space on either side of the original string. If not provided, the default fill character is a space.
+     print("nader".center(110, '='))
+     output
+     =====================================nader======================================
+
 '''
     speakEn("What you need from Google")
     print(" What you need from Google ".center(110, "="))
@@ -74,33 +78,33 @@ def vs_code(): #if you want to edit this code ,all you need to call me XD
     #r is used to ignore double slashes if the 'r' is gone double them ,its a format method
     os.startfile(codePath) #open the file using his path
 
-def time_now():
+def time_now():#used to know timw in HMS
     strTime = datetime.datetime.now().strftime("%H:%M:%S") #used to format the time to string    
     speakEn(f"Sir, the time is {strTime}")
     print(f" Sir, the time is {strTime} ".center(110, "="))
 
-def date_now():
+def date_now():#used to know the date
     strTime = datetime.date.today()
     speakEn(f"Sir, the time is {strTime}")
     print(f" Sir, the time is {strTime} ".center(110, "="))
 
-def ece_drive():
+def ece_drive():#opens the ece drive 2026 ,nerd
     speakEn("ohhh yaa , you are from e c e 2026 , you are lucky , however , drive is open")
     print(" ohhhhhh ya , you are from ece 2026 , you are lucky , however , drive is open ".center(110, "="))
     url = "https://drive.google.com/drive/folders/13NMDUoI4rid0KJYlIfAeeC-RExtsFJFR"
     webbrowser.open_new_tab(url)
 
-def developers():
+def developers():#who made me
     speakEn("This Program is developed By 4 student In Ece department")
     print(" This Program is developed By 4 student In Ece department ".center(110, "="))
 
-def ece_channel():
+def ece_channel():#open ece2026 channel on the youtube platform
     speakEn("You seem to be a fan of abdelrahman Asem records, however, channel is open")
     print(" You seem to be a fan of abdelrahman Asem records, however, channel is open ".center(110, "="))
     url = "https://www.youtube.com/@ECE-2026"
     webbrowser.open_new(url)
 
-def discord():
+def discord():#opens the discord, you can choose (app.exe or the website) using the voice
     speakEn("Discord ? hmmmm , You look like a Gamer")
     print(" Discord ? hmmmm , You look like a Gamer ".center(110, "="))
     speakEn("You need Application Or Website")
@@ -116,9 +120,9 @@ def discord():
         speakEn("Unknown choose , sorry about this error")
         print(" Unknown choose , sorry about this error ".center(110, "="))
 
-def whatsapp() : 
-    speakEn("Whatsapp ? hmmmm , You will talk to the crush ? , You seem naughty")
-    print(" Whatsapp ? hmmmm , You will talk to the crush ? , You seem naughty ".center(110, "="))
+def whatsapp() : #opens the green app, you can choose (app.exe or the website) using the voice
+    speakEn("Whatsapp ? hmmmm , You will talk to someone ? , You need help?")
+    print(" Whatsapp ? hmmmm , You will talk to someone ? , You need help? ".center(110, "="))
     speakEn("You need Application Or Website")
     print(" You need Application Or Website ".center(110, "="))
     respond = listenEn()
@@ -132,7 +136,7 @@ def whatsapp() :
         speakEn("Unknown choose , sorry about this error")
         print(" Unknown choose , sorry about this error ".center(110, "="))
 
-def linkedin():
+def linkedin():#if you want some money call me, better code beso
     speakEn("linkedin hmmmmmmm ? , you search about A job")
     print(" linkedin hmmmmmmm ? , you search about A job ".center(110, "="))
     speakEn("operation Done!")
@@ -140,17 +144,17 @@ def linkedin():
     url = "https://www.linkedin.com/feed/"
     webbrowser.open_new(url)
 
-def calculation():
+def calculation():#opens the calc 
     speakEn("operation is done")
     codePath = r"C:\Windows\System32\calc.exe"
     os.startfile(codePath)
 
-def edge():
+def edge():#opens Microsoft Edge
     speakEn("operation is done")
     codePath = r"C:\Users\ahmed\AppData\Local\Microsoft\WindowsApps\MicrosoftEdge.exe"
     os.startfile(codePath)
 
-def wikipedia():
+def wikipedia():#opens the Wiki
     speakEn("ًWikipedia Opened")
     print(" Wikipedia Opened ".center(110, "="))
     speakEn("What you need from Wikipedia")
@@ -162,15 +166,15 @@ def wikipedia():
     import warnings
     warnings.filterwarnings("ignore")
     try:
-        m = wikipedia.search(value, 3)
+        m = wikipedia.search(value, 3)#print 3 sentences about the topic sum
         speak(wikipedia.summary(m[0], sentences=2))
         print(wikipedia.summary(m[0], sentences=2))
-    except wikipedia.exceptions.DisambiguationError as e:
+    except wikipedia.exceptions.DisambiguationError as e: #throw the error
         s = random.choice(e.options)
         p = wikipedia.summary(s, sentences=2)
         print(p) 
 
-def joke():
+def joke():# advice :dont come here
     speakEn("I am an artificial intelligence program that is not intended for laughter my Naughty . Nevertheless, I will tell you a joke that will make you laugh for the next year")
     print(" I am an artificial intelligence program that is not intended for laughter my Naughty . Nevertheless, I will tell you a joke that will make you laugh for the next year ".center(110, "="))
     output_box.configure(state='normal')
@@ -222,17 +226,18 @@ def joke():
         print(" What do you Call Someone with No Body and No Nose? ".center(110, "="))
         speakEn("Nobody Nose! , Hahahahahahahahahahahaha")
         print(" Nobody Nose! ".center(110, "="))
+        #we used if and elif because there is not switch statment
 
 
-def chatGpt():
+def chatGpt():#opens chatGPT using API(Application Programming Interface)
     speakEn("Chat Gpt is open")
     print(" Chat Gpt is open ".center(110, "="))
     speakEn("What do You Need from Gpt ?")
     print(" What do You Need from Gpt ? ".center(110, "="))
-    user_input = listen()
+    user_input = listen()#take the Qs from you using voice
     user_input = user_input.strip()
     while True:
-        if user_input.lower() == ('shut down' or "bye"):
+        if user_input.lower() == ('shut down' or "bye"):#why do  you want to leave me＞︿＜
             speak("Goodbye!")
             print(" Bot: Goodbye! ".center(110, "="))
             break
@@ -241,24 +246,26 @@ def chatGpt():
         print(f" Bot: {response} ".center(110, "="))
         user_input = listen() 
 
-def playMusic() :
+def playMusic() :#used to open a sound folder and chooses random one for you 
     songs_dir=r"C:\\Users\\ahmed\\Downloads\\Music"
     songs=os.listdir(songs_dir)
-    ra = random.randint(0,coun())
+    ra = random.randint(0,coun())#coun is a function which counts how many files are in the folder
     os.startfile(os.path.join(songs_dir,songs[ra]))
 
-def weather():
-    api_key = "2493d2dbe14bd976436c91a8d6757ff3"
-    base_url = "http://api.openweathermap.org/data/2.5/weather?"
+def weather():#to know today's weather
+    api_key = "2493d2dbe14bd976436c91a8d6757ff3" #the site api
+    base_url = "http://api.openweathermap.org/data/2.5/weather?"# the url of the site
     speakEn("in which city you need to weather")
     print("in which city you need to weather")
     city = listenEn()
     city_name = city
-    complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+    complete_url = base_url + "appid=" + api_key + "&q=" + city_name #make a string to creat the input of the function
     response = requests.get(complete_url)
     x = response.json()
 
-    if x["cod"] != "404":
+    if x["cod"] != "404":#if there is no error in the search do this
+        #x['h'] where is x is a dictionary 
+        #the rest of the code is decoration
         y = x["main"]
         current_temperature = y["temp"]
         current_temperature = current_temperature - 273
@@ -283,7 +290,10 @@ def weather():
         speakEn(" City Not Found ")
         print(" City Not Found ".center(110, "="))
 
-def get_battery_charge():
+def get_battery_charge():#using a function which reaches sensors of the machine it prints batt percentage with a small advice
+    '''
+ Psutil:    is a powerful cross-platform library that provides an interface for accessing system details and process utilities. It allows you to monitor system resources such as CPU, memory, disk usage, network information, and more. With psutil, you can also interact with running processes, query their information, and even terminate them if needed.
+     '''
   """Returns the percentage of battery charge."""
   battery = psutil.sensors_battery()
   if battery is None:
