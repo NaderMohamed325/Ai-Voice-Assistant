@@ -8,19 +8,19 @@ import webbrowser # open default browser
 import os #reach os files and operate them
 import smtplib #client session object that can be used to send mail to any Internet machine
 import math # do math 
-import numpy
-import pandas
-import matplotlib
-import openai
-import google.generativeai as palm
-import requests, json
-import random
-import gtts
-from tempfile import NamedTemporaryFile
-import pygame
+import numpy # do operations on arrays
+import pandas # organize your dataframe
+import matplotlib# graph 
+import openai# helps the project to reach chatGPT features
+import google.generativeai as palm # google ai 
+import requests, json #used to send emails
+import random# generates random numbers
+import gtts #to interface with Google Translate's text-to-speech API
+from tempfile import NamedTemporaryFile #used in a situation, where we need to read multiple files, change or access the data in the file, and gives output files based on the result of processed data
+import pygame#writting games
 from define import speak,listen,coun,chat_with_gpt,speakEn,listenEn,send_email,input_box,output_box,tk
 import psutil
-from deep_translator import GoogleTranslator
+from deep_translator import GoogleTranslator # Translates
 """######################## Library Files End ######################"""
 
 """##################### Function Define Start #####################"""
