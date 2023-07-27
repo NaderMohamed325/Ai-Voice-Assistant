@@ -306,7 +306,7 @@ def get_battery_charge():#using a function which reaches sensors of the machine 
     if battery_percentage <=20:
      speak("please connect the charge")
     return battery_percentage
-
+#there is no need to explain this ≡(▔﹏▔)≡
 def shutdown():
     return os.system("shutdown /s /t 1")
 
