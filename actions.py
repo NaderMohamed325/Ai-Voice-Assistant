@@ -18,7 +18,7 @@ import random
 import gtts
 from tempfile import NamedTemporaryFile
 import pygame
-from define import speak,listen,coun,chat_with_gpt,speakEn,listenEn,send_email
+from define import speak,listen,coun,chat_with_gpt,speakEn,listenEn,send_email,input_box,output_box,tk
 import psutil
 from deep_translator import GoogleTranslator
 """######################## Library Files End ######################"""
@@ -163,6 +163,9 @@ def wikipedia():
 def joke():
     speakEn("I am an artificial intelligence program that is not intended for laughter my Naughty . Nevertheless, I will tell you a joke that will make you laugh for the next year")
     print(" I am an artificial intelligence program that is not intended for laughter my Naughty . Nevertheless, I will tell you a joke that will make you laugh for the next year ".center(110, "="))
+    output_box.configure(state='normal')
+    output_box.insert('end',"Bot : I am an artificial intelligence program that is not intended for laughter my Naughty . Nevertheless, I will tell you a joke that will make you laugh for the next year\n")
+    output_box.configure(state='disabled')
     num = int(random.randint(0,8))
     if num == 0 :
         speakEn("why is six sacred seven ?")
@@ -193,7 +196,7 @@ def joke():
         speakEn("Why don't eggs tell jokes?")
         print(" Why don't eggs tell jokes? ".center(110, "="))
         speakEn("Because they might crack up! , Hahahahahahahahahahahaha")
-        print(" Because they might crack up! ".center(110, "="))
+        print(" Because they might crack up! ".center(110, "="))     
     elif num == 6 :
         speakEn("Why did the tomato turn red?")
         print(" Why did the tomato turn red? ".center(110, "="))
@@ -209,6 +212,7 @@ def joke():
         print(" What do you Call Someone with No Body and No Nose? ".center(110, "="))
         speakEn("Nobody Nose! , Hahahahahahahahahahahaha")
         print(" Nobody Nose! ".center(110, "="))
+
 
 def chatGpt():
     speakEn("Chat Gpt is open")
@@ -316,8 +320,8 @@ def translation():
     speakEn("From each langauge you need to translate")
     print("From each langauge you need to translate".center(110, "="))
     language = listenEn()
-    language = language.split().lower()
-    if language == "arabic" :
+    language = language.lower()
+    if "arabic" in language :
             speakEn("Say your statement")
             to_translate = listen()
             translated = GoogleTranslator(source='auto', target='en').translate(to_translate)
@@ -331,9 +335,12 @@ def translation():
             print(translated)
 
 def emails():
-    email_sender = 'ahmedbasem12004@gmail.com'
+    email_sender = 'ahmedBot12004@gmail.com'
     speakEn("Enter The Email You Want TO send the Email")
-    email_receiver = input("Enter The Email Please : ")
+    input_box.delete(0, tk.END)
+    email_receiver = input_box.insert(0, input())  
+        
+    
     email_password = "heuxxxajgpgoalds"
     speakEn("Say What is the Subject of Mail")
     print(" Say What is the Subject of Mail ".center("=",110))
