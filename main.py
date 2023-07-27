@@ -1,124 +1,121 @@
-from define import listen,speak,welcome,progLang,chat_with_gpt
+from define import listen,speak,welcome,progLang,chat_with_gpt,root,tk,input_box,output_box,start,refresh_button,ask_button
 from actions import *
+
 ##################################################
-welcome()
-UserOrder = listen()
-UserOrder = UserOrder.lower()
-while True :
-    if progLang == "ar" :
-        if "سلام" in UserOrder :
+
+def main():
+    speakEn("How Can I Help You")
+    UserOrder = listen()
+    UserOrder = UserOrder.lower()
+    while True :
+        if ("سلام") in UserOrder :
             break
-        elif "شكرا" in UserOrder :
+        elif ("شكرا") in UserOrder :
             break
-        elif "الي اللقاء" in UserOrder :
+        elif ("الي اللقاء") in UserOrder :
             break
-        elif "باي" in UserOrder :
+        elif ("باي") in UserOrder :
             break
-        elif "يوتيوب" in UserOrder :
+        elif ("يوتيوب") in UserOrder :
             youtube()
             break
-        elif "جوجل" in UserOrder :
+        elif ("جوجل") in UserOrder :
             google()
             break    
-        elif "فيسبوك" in UserOrder :
+        elif ("فيسبوك") in UserOrder :
             facebook()
             break
-        elif "ديسكورد" in UserOrder :
+        elif ("ديسكورد") in UserOrder :
             discord()
             break
-        elif "كود" in UserOrder :
+        elif ("كود") in UserOrder :
             vs_code()
             break
-        elif "في اس" in UserOrder :
+        elif ("في اس") in UserOrder :
             vs_code()
             break
-        elif "وقت" in UserOrder :
+        elif ("وقت") in UserOrder :
             time_now()
             break
-        elif "الوقت" in UserOrder :
+        elif ("الوقت") in UserOrder :
             time_now()
             break
-        elif "التاريخ" in UserOrder :
+        elif ("التاريخ") in UserOrder :
             date_now()
             break
-        elif "تاريخ" in UserOrder :
+        elif ("تاريخ") in UserOrder :
             date_now()
             break
-        elif "درايف" in UserOrder :
+        elif ("درايف") in UserOrder :
             ece_drive()
             break
-        elif "قناة" in UserOrder :
+        elif ("قناه") in UserOrder :
             ece_channel()
-        elif "المطورين" in UserOrder :
+        elif ("مطورين") in UserOrder :
             developers()
-        elif "المطورين" in UserOrder :
+        elif ("المطورين") in UserOrder :
             developers()
-        elif "لينكد ان" in UserOrder :
+        elif ("لينكد ان") in UserOrder :
             linkedin()
-        elif "لينكدان" in UserOrder :
+        elif ("لينكدان") in UserOrder :
             linkedin()
-        elif "ويكبيديا" in UserOrder :
+        elif ("ويكبيديا") in UserOrder :
             wikipedia()
-        elif "نكته" in UserOrder :
+        elif ("نكته") in UserOrder :
             joke()
-        elif "ضحكني" in UserOrder :
+        elif ("ضحكني") in UserOrder :
             joke()
-        elif "شات" in UserOrder :
+        elif ("شات") in UserOrder :
             chatGpt()
-        elif "جي بي تي" in UserOrder :
+        elif ("جي بي تي") in UserOrder :
             chatGpt()
-        elif "واتس" in UserOrder :
+        elif ("واتس") in UserOrder :
             whatsapp()
             break
-        elif "واتساب" in UserOrder :
+        elif ("واتساب") in UserOrder :
             whatsapp()
             break
-        elif "موسيقى" in UserOrder :
+        elif ("موسيقى") in UserOrder :
             playMusic()
             break
-        elif "ترجمه" :
+        elif ("ترجمه") in UserOrder :
             translation()
             break
-        elif "الطقس" in UserOrder :
+        elif ("الطقس") in UserOrder :
             weather()
             break
-        elif "درجة الحرارة" in UserOrder :
+        elif ("درجة الحرارة") in UserOrder :
             weather()
             break
-        elif "اقفل الجهاز" in UserOrder :
+        elif ("اقفل الجهاز") in UserOrder :
             shutdown()
-        elif "اعد تشغيل الجهاز" in UserOrder :
+        elif ("اعد تشغيل الجهاز") in UserOrder :
             restart()
-        elif "لوج اوت" in UserOrder :
+        elif ("لوج اوت") in UserOrder :
             log_out()
-        elif "نسبه شحن البطاريه" in UserOrder :
+        elif ("نسبه شحن البطاريه") in UserOrder :
             get_battery_charge()
-        elif "نسبه الشحن" in UserOrder :
+        elif ("نسبه الشحن") in UserOrder :
             get_battery_charge()
-        elif "لقطه شاشه" in UserOrder :
+        elif ("لقطه شاشه") in UserOrder :
             screenshot()
             break
-        elif "صوره" in UserOrder :
+        elif ("صوره") in UserOrder :
             capture()
             break
-        elif "فيديو" in UserOrder :
+        elif ("فيديو") in UserOrder :
             video_take()
             break
-        elif "ملاحظه" in UserOrder :
+        elif ("ملاحظه") in UserOrder :
             notes()
             break
-        elif "تسجيل ملاحظه" in UserOrder :
+        elif ("تسجيل ملاحظه") in UserOrder :
             notes()
             break
-        elif "ارسال بريد" :
+        elif ("ارسال بريد") in UserOrder :
             emails()
             break
-        else : 
-            result = chat_with_gpt(UserOrder)
-            speak(result)
-            break
-    else :
-        if "bye" in UserOrder :
+        elif "bye" in UserOrder :
             break
         elif "goodbye" in UserOrder :
             break
@@ -141,8 +138,10 @@ while True :
             break
         elif "time" in UserOrder :
             time_now()
+            break
         elif "date" in UserOrder :
             date_now()
+            break
         elif "our drive" in UserOrder :
             ece_drive()
             break
@@ -154,10 +153,10 @@ while True :
         elif "linkedin" in UserOrder :
             linkedin()
             break
-        elif "send email" :
+        elif "send email" in UserOrder :
             emails()
             break
-        elif "translation" :
+        elif "translation" in UserOrder :
             translation()
             break
         elif "wikipedia" in UserOrder :
@@ -216,7 +215,6 @@ while True :
         else : 
             result = chat_with_gpt(UserOrder)
             speak(result)
-            break
-    speakEn("Any Thing Other")
-    UserOrder = listen()
-    UserOrder = UserOrder.lower()
+            break 
+ask_button.configure(command = main)
+root.mainloop()
