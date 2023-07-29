@@ -1,220 +1,240 @@
-from define import listen,speak,welcome,progLang,chat_with_gpt,root,tk,input_box,output_box,start,refresh_button,ask_button
+# Importing functions from external files
+from define import listen, speak, welcome, progLang, chat_with_gpt, root, tk, input_box, output_box, start, \
+    refresh_button, ask_button
 from actions import *
+
 
 ##################################################
 
+# The main function that runs when the program starts
 def main():
+    # Speak a welcome message to the user
     speakEn("How Can I Help You")
+
+    # Listen to the user's input
     UserOrder = listen()
+
+    # Convert user input to lowercase for case-insensitive comparisons
     UserOrder = UserOrder.lower()
-    while True :
-        if ("سلام") in UserOrder :
+
+    # The main loop to process user requests
+    while True:
+        # Check for various keywords in the user's input and perform corresponding actions
+        if ("سلام") in UserOrder:
             break
-        elif ("شكرا") in UserOrder :
+        elif ("شكرا") in UserOrder:
             break
-        elif ("الي اللقاء") in UserOrder :
+        elif ("الي اللقاء") in UserOrder:
             break
-        elif ("باي") in UserOrder :
+        elif ("باي") in UserOrder:
             break
-        elif ("يوتيوب") in UserOrder :
+        elif ("يوتيوب") in UserOrder:
             youtube()
             break
-        elif ("جوجل") in UserOrder :
+        elif ("جوجل") in UserOrder:
             google()
-            break    
-        elif ("فيسبوك") in UserOrder :
+            break
+        elif ("فيسبوك") in UserOrder:
             facebook()
             break
-        elif ("ديسكورد") in UserOrder :
+        elif ("ديسكورد") in UserOrder:
             discord()
             break
-        elif ("كود") in UserOrder :
+        elif ("كود") in UserOrder:
             vs_code()
             break
-        elif ("في اس") in UserOrder :
+        elif ("في اس") in UserOrder:
             vs_code()
             break
-        elif ("وقت") in UserOrder :
+        elif ("وقت") in UserOrder:
             time_now()
             break
-        elif ("الوقت") in UserOrder :
+        elif ("الوقت") in UserOrder:
             time_now()
             break
-        elif ("التاريخ") in UserOrder :
+        elif ("التاريخ") in UserOrder:
             date_now()
             break
-        elif ("تاريخ") in UserOrder :
+        elif ("تاريخ") in UserOrder:
             date_now()
             break
-        elif ("درايف") in UserOrder :
+        elif ("درايف") in UserOrder:
             ece_drive()
             break
-        elif ("قناه") in UserOrder :
+        elif ("قناه") in UserOrder:
             ece_channel()
-        elif ("مطورين") in UserOrder :
+        elif ("مطورين") in UserOrder:
             developers()
-        elif ("المطورين") in UserOrder :
+        elif ("المطورين") in UserOrder:
             developers()
-        elif ("لينكد ان") in UserOrder :
+        elif ("لينكد ان") in UserOrder:
             linkedin()
-        elif ("لينكدان") in UserOrder :
+        elif ("لينكدان") in UserOrder:
             linkedin()
-        elif ("ويكبيديا") in UserOrder :
+        elif ("ويكبيديا") in UserOrder:
             wikipedia()
-        elif ("نكته") in UserOrder :
+        elif ("نكته") in UserOrder:
             joke()
-        elif ("ضحكني") in UserOrder :
+        elif ("ضحكني") in UserOrder:
             joke()
-        elif ("شات") in UserOrder :
+        elif ("شات") in UserOrder:
             chatGpt()
-        elif ("جي بي تي") in UserOrder :
+        elif ("جي بي تي") in UserOrder:
             chatGpt()
-        elif ("واتس") in UserOrder :
+        elif ("واتس") in UserOrder:
             whatsapp()
             break
-        elif ("واتساب") in UserOrder :
+        elif ("واتساب") in UserOrder:
             whatsapp()
             break
-        elif ("موسيقى") in UserOrder :
+        elif ("موسيقى") in UserOrder:
             playMusic()
             break
-        elif ("ترجمه") in UserOrder :
+        elif ("ترجمه") in UserOrder:
             translation()
             break
-        elif ("الطقس") in UserOrder :
+        elif ("الطقس") in UserOrder:
             weather()
             break
-        elif ("درجة الحرارة") in UserOrder :
+        elif ("درجة الحرارة") in UserOrder:
             weather()
             break
-        elif ("اقفل الجهاز") in UserOrder :
+        elif ("اقفل الجهاز") in UserOrder:
             shutdown()
-        elif ("اعد تشغيل الجهاز") in UserOrder :
+        elif ("اعد تشغيل الجهاز") in UserOrder:
             restart()
-        elif ("لوج اوت") in UserOrder :
+        elif ("لوج اوت") in UserOrder:
             log_out()
-        elif ("نسبه شحن البطاريه") in UserOrder :
+        elif ("نسبه شحن البطاريه") in UserOrder:
             get_battery_charge()
-        elif ("نسبه الشحن") in UserOrder :
+        elif ("نسبه الشحن") in UserOrder:
             get_battery_charge()
-        elif ("لقطه شاشه") in UserOrder :
+        elif ("لقطه شاشه") in UserOrder:
             screenshot()
             break
-        elif ("صوره") in UserOrder :
+        elif ("صوره") in UserOrder:
             capture()
             break
-        elif ("فيديو") in UserOrder :
+        elif ("فيديو") in UserOrder:
             video_take()
             break
-        elif ("ملاحظه") in UserOrder :
+        elif ("ملاحظه") in UserOrder:
             notes()
             break
-        elif ("تسجيل ملاحظه") in UserOrder :
+        elif ("تسجيل ملاحظه") in UserOrder:
             notes()
             break
-        elif ("ارسال بريد") in UserOrder :
+        elif ("ارسال بريد") in UserOrder:
             emails()
             break
-        elif "bye" in UserOrder :
+        elif "bye" in UserOrder:
             break
-        elif "goodbye" in UserOrder :
+        elif "goodbye" in UserOrder:
             break
-        elif "thanks" in UserOrder :
+        elif "thanks" in UserOrder:
             break
-        elif "youtube" in UserOrder :
+        elif "youtube" in UserOrder:
             youtube()
             break
-        elif "google" in UserOrder :
+        elif "google" in UserOrder:
             google()
-            break    
-        elif "facebook" in UserOrder :
+            break
+        elif "facebook" in UserOrder:
             facebook()
             break
-        elif "discord" in UserOrder :
+        elif "discord" in UserOrder:
             discord()
             break
-        elif "code" in UserOrder :
+        elif "code" in UserOrder:
             vs_code()
             break
-        elif "time" in UserOrder :
+        elif "time" in UserOrder:
             time_now()
             break
-        elif "date" in UserOrder :
+        elif "date" in UserOrder:
             date_now()
             break
-        elif "our drive" in UserOrder :
+        elif "our drive" in UserOrder:
             ece_drive()
             break
-        elif "our channel" in UserOrder :
+        elif "our channel" in UserOrder:
             ece_channel()
             break
-        elif "developers" in UserOrder :
+        elif "developers" in UserOrder:
             developers()
-        elif "linkedin" in UserOrder :
+        elif "linkedin" in UserOrder:
             linkedin()
             break
-        elif "send email" in UserOrder :
+        elif "send email" in UserOrder:
             emails()
             break
-        elif "translation" in UserOrder :
+        elif "translation" in UserOrder:
             translation()
             break
-        elif "wikipedia" in UserOrder :
+        elif "wikipedia" in UserOrder:
             wikipedia()
-        elif "joke" in UserOrder :
+        elif "joke" in UserOrder:
             joke()
-        elif "gbt" in UserOrder :
+        elif "gbt" in UserOrder:
             chatGpt()
-        elif "chat" in UserOrder :
+        elif "chat" in UserOrder:
             chatGpt()
-        elif "gpt" in UserOrder :
+        elif "gpt" in UserOrder:
             chatGpt()
-        elif 'what\'s' in UserOrder :
+        elif 'what\'s' in UserOrder:
             whatsapp()
             break
-        elif "whatsapp" in UserOrder :
+        elif "whatsapp" in UserOrder:
             whatsapp()
             break
-        elif ("music") in UserOrder :
+        elif ("music") in UserOrder:
             playMusic()
             break
-        elif "temperature" in UserOrder :
+        elif "temperature" in UserOrder:
             weather()
             break
-        elif "weather" in UserOrder :
+        elif "weather" in UserOrder:
             weather()
-        elif ("shut down") in UserOrder :
+        elif ("shut down") in UserOrder:
             shutdown()
-        elif ("restart") in UserOrder :
+        elif ("restart") in UserOrder:
             restart()
-        elif ("log out") in UserOrder :
+        elif ("log out") in UserOrder:
             log_out()
-        elif ("battery") in UserOrder :
+        elif ("battery") in UserOrder:
             get_battery_charge()
-        elif ("screenshot") in UserOrder :
+        elif ("screenshot") in UserOrder:
             screenshot()
             break
-        elif ("image") in UserOrder :
+        elif ("image") in UserOrder:
             capture()
             break
-        elif ("photo") in UserOrder :
+        elif ("photo") in UserOrder:
             capture()
             break
-        elif ("take a video") in UserOrder :
+        elif ("take a video") in UserOrder:
             video_take()
             break
-        elif ("video") in UserOrder :
+        elif ("video") in UserOrder:
             video_take()
             break
-        elif"note" in UserOrder :
+        elif "note" in UserOrder:
             notes()
             break
-        elif"notes" in UserOrder :
+        elif "notes" in UserOrder:
             notes()
             break
-        else : 
+        else:
+            # If no specific action matches, have a chat with GPT-3.5 model
             result = chat_with_gpt(UserOrder)
+            # Speak the response from the chatbot
             speak(result)
-            break 
-ask_button.configure(command = main)
+            break
+
+        # Configure the 'ask_button' to call the 'main' function when clicked
+
+
+ask_button.configure(command=main)
+
+# Start the Tkinter main event loop
 root.mainloop()
